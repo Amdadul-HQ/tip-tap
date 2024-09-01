@@ -2,7 +2,7 @@ import { useCurrentEditor } from "@tiptap/react";
 import useIcon from "./useIcon";
 
 const MenuBar = () => {
-    const {FormatBoldIcon, FormatItalicIcon, StrikethroughSIcon,CodeIcon,FormatClearIcon, FormatTextdirectionLToRIcon} = useIcon();
+    const {FormatBoldIcon, FormatItalicIcon, StrikethroughSIcon,CodeIcon,FormatClearIcon, FormatTextdirectionLToRIcon,FormatListBulletedIcon,FormatListNumberedIcon,BiCodeBlock} = useIcon();
     const { editor } = useCurrentEditor()
   
     if (!editor) {
@@ -116,13 +116,13 @@ const MenuBar = () => {
             onClick={() => editor.chain().focus().toggleBulletList().run()}
             className={editor.isActive('bulletList') ? 'is-active' : ''}
           >
-            Bullet list
+            <FormatListBulletedIcon/>
           </button>
           <button
             onClick={() => editor.chain().focus().toggleOrderedList().run()}
             className={editor.isActive('orderedList') ? 'is-active' : ''}
           >
-            Ordered list
+            <FormatListNumberedIcon/>
           </button>
           <button
             onClick={() => editor.chain().focus().toggleCodeBlock().run()}
