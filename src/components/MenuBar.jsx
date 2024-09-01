@@ -16,6 +16,7 @@ export const MenuBar = () => {
   return (
     <div className="control-group text-whtie">
       <div className="button-group">
+        <div className=''>
         <button
           onClick={() => editor.chain().focus().toggleBold().run()}
           disabled={
@@ -68,6 +69,7 @@ export const MenuBar = () => {
         >
           Code
         </button>
+        </div>
         <button onClick={() => editor.chain().focus().unsetAllMarks().run()}>
           Clear marks
         </button>
