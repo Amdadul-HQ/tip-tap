@@ -2,7 +2,19 @@ import { useCurrentEditor } from "@tiptap/react";
 import useIcon from "./useIcon";
 
 const MenuBar = () => {
-    const {FormatBoldIcon, FormatItalicIcon, StrikethroughSIcon,CodeIcon,FormatClearIcon, FormatTextdirectionLToRIcon,FormatListBulletedIcon,FormatListNumberedIcon,BiCodeBlock} = useIcon();
+    const {
+      FormatBoldIcon,
+      FormatItalicIcon,
+      StrikethroughSIcon,
+      CodeIcon,
+      FormatClearIcon,
+      FormatTextdirectionLToRIcon,
+      FormatListBulletedIcon,
+      FormatListNumberedIcon,
+      BiCodeBlock,
+      FormatQuoteIcon,
+      HorizontalRuleIcon,
+    } = useIcon();
     const { editor } = useCurrentEditor()
   
     if (!editor) {
@@ -128,16 +140,16 @@ const MenuBar = () => {
             onClick={() => editor.chain().focus().toggleCodeBlock().run()}
             className={editor.isActive('codeBlock') ? 'is-active' : ''}
           >
-            Code block
+            <BiCodeBlock/>
           </button>
           <button
             onClick={() => editor.chain().focus().toggleBlockquote().run()}
             className={editor.isActive('blockquote') ? 'is-active' : ''}
           >
-            Blockquote
+            <FormatQuoteIcon/>
           </button>
           <button onClick={() => editor.chain().focus().setHorizontalRule().run()}>
-            Horizontal rule
+            <HorizontalRuleIcon/>
           </button>
           <button onClick={() => editor.chain().focus().setHardBreak().run()}>
             Hard break
